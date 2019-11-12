@@ -17,7 +17,7 @@ spring:
     # 驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-    url: jdbc:mysql://114.116.4.196:3306/cateringManagementSystemDataBase?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    url: jdbc:mysql://114.116.4.196:3306/family_finance_system?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
     password: Lp184126
 
@@ -53,7 +53,7 @@ spring:
 mybatis:
   mapper-locations: classpath:mappers/*.xml
   # 全局的映射，不用在xml文件写实体类的全路径
-  type-aliases-package: cn.liupengstudy.catering_management_system.pojo
+  type-aliases-package: cn.liupengstudy.family_finance_system.pojo
 
   configuration:
     # 开启驼峰映射
