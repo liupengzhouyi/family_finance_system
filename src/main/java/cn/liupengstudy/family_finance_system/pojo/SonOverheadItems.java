@@ -98,4 +98,13 @@ public class SonOverheadItems {
     public void setDatetime(Date datetime) {
         this.datetime = datetime;
     }
+
+    @Override
+    public String toString() {
+        return "SonOverheadItems{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", datetime=" + datetime +
+                '}';
+    }
 }
