@@ -1,6 +1,6 @@
-package cn.liupeng.family_finance_system.mapper;
+package cn.liupengstudy.family_finance_system.mapper;
 
-import cn.liupeng.family_finance_system.pojo.FatherOverheadItems;
+import cn.liupengstudy.family_finance_system.pojo.FatherOverheadItems;
 
 public interface FatherOverheadItemsMapper {
     /**

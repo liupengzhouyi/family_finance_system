@@ -1,4 +1,4 @@
-package cn.liupeng.family_finance_system.pojo;
+package cn.liupengstudy.family_finance_system.pojo;
 
 import java.util.Date;
 
