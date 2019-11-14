@@ -99,7 +99,7 @@ public class ImplFatherOverheadItemsService implements IFatherOverheadItems {
      */
     @Override
     public FatherOverheadItems selectByPrimaryKey(Integer id) {
-        return this.selectByPrimaryKey(id);
+        return this.getFatherOverheadItemsMapper().selectByPrimaryKey(id);
     }
 
     /**
