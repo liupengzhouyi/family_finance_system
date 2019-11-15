@@ -76,11 +76,41 @@ public class SonOverheadItemController {
         return returnInformation;
     }
 
+    /**
+     * @描述  通过ID获取子级消费项目
+     * @参数  [integerTpyeId]
+     * @返回值  cn.liupengstudy.family_finance_system.pojo.SonOverheadItems
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/11/15 - 8:04 上午
+     * @修改人和其它信息
+     */
     @ApiOperation(value = "通过ID获取子级消费项目")
     @ResponseBody
     @RequestMapping(value = "/get", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public SonOverheadItems getSonOverheadItem(@RequestBody IntegerTpyeId integerTpyeId) {
         return this.getImplSonOverheadItemsService().selectByPrimaryKey(integerTpyeId.getId());
+    }
+
+    /**
+     * @描述  通过ID删除子级消费项目
+     * @参数  [integerTpyeId] 一个封装Integer的对象
+     * @返回值  java.lang.String
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/11/15 - 8:04 上午
+     * @修改人和其它信息
+     */
+    @ApiOperation(value = "通过ID删除子级消费项目")
+    @ResponseBody
+    @RequestMapping(value = "/delete", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public String deleteSonOverheadItem(@RequestBody IntegerTpyeId integerTpyeId) {
+        int key = this.getImplSonOverheadItemsService().deleteByPrimaryKey(integerTpyeId.getId());
+        String returnInformation = "error";
+        if (key == 1){
+            returnInformation = "success";
+        }
+        return returnInformation;
     }
 
 }
