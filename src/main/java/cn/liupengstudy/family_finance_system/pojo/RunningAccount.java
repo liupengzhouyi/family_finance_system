@@ -304,4 +304,19 @@ public class RunningAccount {
     public void setLlongitude(Double llongitude) {
         this.llongitude = llongitude;
     }
+
+    @Override
+    public String toString() {
+        return "RunningAccount{" +
+                "id=" + id +
+                ", necessaryconsume=" + necessaryconsume +
+                ", itemsnumber=" + itemsnumber +
+                ", amount=" + amount +
+                ", datetime=" + datetime +
+                ", remarks='" + remarks + '\'' +
+                ", city='" + city + '\'' +
+                ", latitude=" + latitude +
+                ", llongitude=" + llongitude +
+                '}';
+    }
 }

@@ -65,6 +65,7 @@ public class RunningAccountController {
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public String addRunningAccount(@RequestBody RunningAccount runningAccount) {
+        System.out.println(runningAccount.toString());
         int key = this.getImplRunningAccountService().insert(runningAccount);
         String returnInformation = "error";
         if (key == 1){
