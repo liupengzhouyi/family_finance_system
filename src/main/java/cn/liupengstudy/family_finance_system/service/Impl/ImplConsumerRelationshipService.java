@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @修改人和其它信息
  */
 @Service
-public class ImplConsumerRelationship implements IConsumerRelationship {
+public class ImplConsumerRelationshipService implements IConsumerRelationship {
 
     // 数据库映射操作类
     private ConsumerRelationshipMapper consumerRelationshipMapper;
