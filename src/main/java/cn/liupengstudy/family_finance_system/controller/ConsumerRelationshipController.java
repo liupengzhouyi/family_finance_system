@@ -6,6 +6,7 @@ import cn.liupengstudy.family_finance_system.service.IConsumerRelationship;
 import cn.liupengstudy.family_finance_system.service.Impl.ImplConsumerRelationshipService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -23,6 +24,7 @@ public class ConsumerRelationshipController {
 
 
     // 消费明目关系控制器
+    @Autowired
     private ImplConsumerRelationshipService implConsumerRelationshipService;
 
     @ApiOperation(value = "获取消费明目关系控制器")

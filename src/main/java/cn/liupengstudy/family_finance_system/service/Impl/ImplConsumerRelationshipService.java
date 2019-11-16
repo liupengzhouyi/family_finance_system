@@ -3,6 +3,7 @@ package cn.liupengstudy.family_finance_system.service.Impl;
 import cn.liupengstudy.family_finance_system.mapper.ConsumerRelationshipMapper;
 import cn.liupengstudy.family_finance_system.pojo.ConsumerRelationship;
 import cn.liupengstudy.family_finance_system.service.IConsumerRelationship;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 public class ImplConsumerRelationshipService implements IConsumerRelationship {
 
     // 数据库映射操作类
+    @Autowired
     private ConsumerRelationshipMapper consumerRelationshipMapper;
 
     /**
