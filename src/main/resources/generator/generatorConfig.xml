@@ -69,7 +69,19 @@
 
 
         <!--流水账-->
-        <table tableName="RunningAccount" domainObjectName="RunningAccount"
+        <!--<table tableName="RunningAccount" domainObjectName="RunningAccount"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>-->
+
+        <!--消费明目关系-->
+        <table tableName="ConsumerRelationship" domainObjectName="ConsumerRelationship"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
