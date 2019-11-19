@@ -3,6 +3,9 @@ package cn.liupengstudy.family_finance_system.mapper;
 import cn.liupengstudy.family_finance_system.pojo.RunningAccount;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Date;
+import java.util.List;
+
 @Mapper
 public interface RunningAccountMapper {
     /**
@@ -52,4 +55,16 @@ public interface RunningAccountMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(RunningAccount record);
+
+
+    /**
+     * @描述  通过Date获取List<RunningAccount>
+     * @参数  Date date
+     * @返回值  List<RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/11/19 - 8:28 上午
+     * @修改人和其它信息
+     */
+    List<RunningAccount> getRunningAccountByDate();
 }

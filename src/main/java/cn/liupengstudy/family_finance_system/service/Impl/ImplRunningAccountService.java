@@ -6,6 +6,9 @@ import cn.liupengstudy.family_finance_system.service.IRunningAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+
 /**
  * @文件名 cn.liupengstudy.family_finance_system.service.Impl
  * @描述
@@ -129,5 +132,19 @@ public class ImplRunningAccountService implements IRunningAccount {
     @Override
     public int updateByPrimaryKey(RunningAccount record) {
         return this.getRunningAccountMapper().updateByPrimaryKey(record);
+    }
+
+    /**
+     * @描述  通过Date获取List<RunningAccount>
+     * @参数  Date date
+     * @返回值  List<RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/11/19 - 8:28 上午
+     * @修改人和其它信息
+     */
+    @Override
+    public List<RunningAccount> getRunningAccountByDate() {
+        return this.getRunningAccountMapper().getRunningAccountByDate();
     }
 }

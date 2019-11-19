@@ -16,6 +16,9 @@
     <result column="Latitude" jdbcType="DOUBLE" property="latitude" />
     <result column="Llongitude" jdbcType="DOUBLE" property="llongitude" />
   </resultMap>
+
+
+
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbggenerated
@@ -23,6 +26,8 @@
     -->
     id, necessaryConsume, itemsNumber, amount, datetime, remarks, city, Latitude, Llongitude
   </sql>
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--
       WARNING - @mbggenerated
@@ -33,6 +38,12 @@
     from RunningAccount
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="getRunningAccountByDate" resultMap="BaseResultMap">
+    SELECT * from RunningAccount
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbggenerated
@@ -41,6 +52,8 @@
     delete from RunningAccount
     where id = #{id,jdbcType=INTEGER}
   </delete>
+
+
   <insert id="insert" parameterType="cn.liupengstudy.family_finance_system.pojo.RunningAccount">
     <!--
       WARNING - @mbggenerated
@@ -56,6 +69,8 @@
       #{datetime,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
       #{latitude,jdbcType=DOUBLE}, #{llongitude,jdbcType=DOUBLE})
   </insert>
+
+
   <insert id="insertSelective" parameterType="cn.liupengstudy.family_finance_system.pojo.RunningAccount">
     <!--
       WARNING - @mbggenerated
@@ -118,6 +133,8 @@
       </if>
     </trim>
   </insert>
+
+
   <update id="updateByPrimaryKeySelective" parameterType="cn.liupengstudy.family_finance_system.pojo.RunningAccount">
     <!--
       WARNING - @mbggenerated
@@ -152,6 +169,8 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
   <update id="updateByPrimaryKey" parameterType="cn.liupengstudy.family_finance_system.pojo.RunningAccount">
     <!--
       WARNING - @mbggenerated

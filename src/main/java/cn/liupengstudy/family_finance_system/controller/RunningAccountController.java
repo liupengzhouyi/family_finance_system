@@ -8,6 +8,10 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.crypto.Data;
+import java.util.Date;
+import java.util.List;
+
 /**
  * @文件名 cn.liupengstudy.family_finance_system.controller
  * @描述
@@ -121,6 +125,13 @@ public class RunningAccountController {
             returnInformation = "success";
         }
         return returnInformation;
+    }
+
+    @ApiOperation(value = "获取流水账")
+    @ResponseBody
+    @RequestMapping(value = "/getAll", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectRunningAccountByDate() {
+        return this.getImplRunningAccountService().getRunningAccountByDate();
     }
 
 }
