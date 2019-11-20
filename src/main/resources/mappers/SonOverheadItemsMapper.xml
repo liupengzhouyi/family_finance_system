@@ -32,6 +32,11 @@
     from RunningAccount
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="getIDByName" resultType="java.lang.Integer">
+    SELECT id FROM SonOverheadItems WHERE name  = #{name}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbggenerated

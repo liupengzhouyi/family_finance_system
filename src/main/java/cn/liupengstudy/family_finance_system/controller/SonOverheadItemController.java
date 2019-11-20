@@ -3,6 +3,7 @@ package cn.liupengstudy.family_finance_system.controller;
 import cn.liupengstudy.family_finance_system.pojo.FatherOverheadItems;
 import cn.liupengstudy.family_finance_system.pojo.IntegerTpyeId;
 import cn.liupengstudy.family_finance_system.pojo.SonOverheadItems;
+import cn.liupengstudy.family_finance_system.pojo.StringType;
 import cn.liupengstudy.family_finance_system.service.Impl.ImplSonOverheadItemsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -111,6 +112,13 @@ public class SonOverheadItemController {
             returnInformation = "success";
         }
         return returnInformation;
+    }
+
+    @ApiOperation(value = "通过name获取子级消费项目ID")
+    @ResponseBody
+    @RequestMapping(value = "/getIDByName", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public String getIDByName(@RequestBody StringType stringType) {
+        return this.getImplSonOverheadItemsService().getIDByName(stringType.getString()).getString();
     }
 
 }

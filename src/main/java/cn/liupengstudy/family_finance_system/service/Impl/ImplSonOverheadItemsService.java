@@ -2,6 +2,7 @@ package cn.liupengstudy.family_finance_system.service.Impl;
 
 import cn.liupengstudy.family_finance_system.mapper.SonOverheadItemsMapper;
 import cn.liupengstudy.family_finance_system.pojo.SonOverheadItems;
+import cn.liupengstudy.family_finance_system.pojo.StringType;
 import cn.liupengstudy.family_finance_system.service.ISonOverheadItems;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -129,5 +130,22 @@ public class ImplSonOverheadItemsService implements ISonOverheadItems {
     @Override
     public int updateByPrimaryKey(SonOverheadItems record) {
         return this.getSonOverheadItemsMapper().updateByPrimaryKey(record);
+    }
+
+    /**
+     * @描述  通过消费明目获取消费明目的ID
+     * @参数  [name]
+     * @返回值  int
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/11/20 - 8:40 下午
+     * @修改人和其它信息
+     */
+    @Override
+    public StringType getIDByName(String name){
+        int id = this.getSonOverheadItemsMapper().getIDByName(name);
+        StringType stringType = new StringType();
+        stringType.setString(id + "");
+        return stringType;
     }
 }
