@@ -44,8 +44,6 @@
     and unix_timestamp(#{datetime2}) > unix_timestamp(datetime)
   </select>
 
-
-
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbggenerated

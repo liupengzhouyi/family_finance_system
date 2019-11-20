@@ -1,5 +1,8 @@
 package cn.liupengstudy.family_finance_system.pojo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,13 +15,21 @@ import java.util.Date;
  * @创建时间 2019/11/20 - 12:35 下午
  * @修改人和其它信息
  */
+@ApiModel(value = "一个时间段的类型")
 public class DatetimeType {
 
+    @ApiModelProperty(value = "开始时间")
     private String datetime1;
 
+    @ApiModelProperty(value = "结束时间")
     private String datetime2;
 
     public DatetimeType() {
+    }
+
+    public DatetimeType(String datetime1, String datetime2) {
+        this.datetime1 = datetime1;
+        this.datetime2 = datetime2;
     }
 
     public String getDatetime1() {
