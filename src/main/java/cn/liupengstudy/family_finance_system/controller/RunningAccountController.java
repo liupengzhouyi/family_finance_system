@@ -1,5 +1,6 @@
 package cn.liupengstudy.family_finance_system.controller;
 
+import cn.liupengstudy.family_finance_system.pojo.ADatetimeType;
 import cn.liupengstudy.family_finance_system.pojo.DatetimeType;
 import cn.liupengstudy.family_finance_system.pojo.IntegerTpyeId;
 import cn.liupengstudy.family_finance_system.pojo.RunningAccount;
@@ -128,12 +129,19 @@ public class RunningAccountController {
         return returnInformation;
     }
 
-    @ApiOperation(value = "获取流水账")
+    @ApiOperation(value = "获取一个时间段内的流水账")
     @ResponseBody
-    @RequestMapping(value = "/getAll", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public List<RunningAccount> selectRunningAccountByDate(DatetimeType datetimeType) {
+    @RequestMapping(value = "/getByTowDate", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectRunningAccountByDateI(DatetimeType datetimeType) {
         System.out.println(datetimeType.getDatetime1() + datetimeType.getDatetime2());
         return this.getImplRunningAccountService().getRunningAccountByDate(datetimeType.getDatetime1(), datetimeType.getDatetime2());
+    }
+
+    @ApiOperation(value = "获取某一天流水账")
+    @ResponseBody
+    @RequestMapping(value = "/getByDate", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectRunningAccountByDateII(ADatetimeType aDatetimeType) {
+        return this.getImplRunningAccountService().getRunningAccountByDate(aDatetimeType.getDatetime1(), aDatetimeType.getDatetime2());
     }
 
 }
