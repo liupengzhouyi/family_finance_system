@@ -1,5 +1,6 @@
 package cn.liupengstudy.family_finance_system.controller;
 
+import cn.liupengstudy.family_finance_system.pojo.DatetimeType;
 import cn.liupengstudy.family_finance_system.pojo.IntegerTpyeId;
 import cn.liupengstudy.family_finance_system.pojo.RunningAccount;
 import cn.liupengstudy.family_finance_system.service.Impl.ImplRunningAccountService;
@@ -130,8 +131,9 @@ public class RunningAccountController {
     @ApiOperation(value = "获取流水账")
     @ResponseBody
     @RequestMapping(value = "/getAll", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public List<RunningAccount> selectRunningAccountByDate() {
-        return this.getImplRunningAccountService().getRunningAccountByDate();
+    public List<RunningAccount> selectRunningAccountByDate(DatetimeType datetimeType) {
+        System.out.println(datetimeType.getDatetime1() + datetimeType.getDatetime2());
+        return this.getImplRunningAccountService().getRunningAccountByDate(datetimeType.getDatetime1(), datetimeType.getDatetime2());
     }
 
 }

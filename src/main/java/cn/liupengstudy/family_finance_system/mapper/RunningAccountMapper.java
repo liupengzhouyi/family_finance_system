@@ -2,6 +2,7 @@ package cn.liupengstudy.family_finance_system.mapper;
 
 import cn.liupengstudy.family_finance_system.pojo.RunningAccount;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
@@ -66,5 +67,5 @@ public interface RunningAccountMapper {
      * @创建时间  2019/11/19 - 8:28 上午
      * @修改人和其它信息
      */
-    List<RunningAccount> getRunningAccountByDate();
+    List<RunningAccount> getRunningAccountByDate(@Param("datetime1")String datatime1, @Param("datetime2")String datetime2);
 }

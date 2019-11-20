@@ -18,7 +18,6 @@
   </resultMap>
 
 
-
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbggenerated
@@ -40,8 +39,11 @@
   </select>
 
   <select id="getRunningAccountByDate" resultMap="BaseResultMap">
-    SELECT * from RunningAccount
+    select * from RunningAccount
+    where unix_timestamp(datetime) > unix_timestamp(#{datetime1})
+    and unix_timestamp(#{datetime2}) > unix_timestamp(datetime)
   </select>
+
 
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

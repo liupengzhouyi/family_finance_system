@@ -144,7 +144,7 @@ public class ImplRunningAccountService implements IRunningAccount {
      * @修改人和其它信息
      */
     @Override
-    public List<RunningAccount> getRunningAccountByDate() {
-        return this.getRunningAccountMapper().getRunningAccountByDate();
+    public List<RunningAccount> getRunningAccountByDate(String datatime1, String datetime2) {
+        return this.getRunningAccountMapper().getRunningAccountByDate(datatime1, datetime2);
     }
 }
