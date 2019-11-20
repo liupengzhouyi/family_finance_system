@@ -1,6 +1,7 @@
 package cn.liupengstudy.family_finance_system.service;
 
 import cn.liupengstudy.family_finance_system.pojo.RunningAccount;
+import cn.liupengstudy.family_finance_system.pojo.StringType;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
@@ -74,5 +75,16 @@ public interface IRunningAccount {
      * @修改人和其它信息
      */
     List<RunningAccount> getRunningAccountByDate(String datatime1, String datetime2);
+
+    /**
+     * @描述  通过消费明目ID查询流水账
+     * @参数  [id]
+     * @返回值  java.util.List<cn.liupengstudy.family_finance_system.pojo.RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/11/20 - 9:53 下午
+     * @修改人和其它信息
+     */
+    List<RunningAccount> getRunningAccountByID(@Param("id")StringType id);
 }
 

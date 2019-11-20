@@ -44,6 +44,11 @@
     and unix_timestamp(#{datetime2}) > unix_timestamp(datetime)
   </select>
 
+  <select id="getRunningAccountByID" resultMap="BaseResultMap">
+    select * from RunningAccount
+    where itemsNumber = #{id}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbggenerated
