@@ -32,7 +32,7 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <!-- 生成映射文件的包名和位置-->
+         <!--生成映射文件的包名和位置-->
         <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -81,16 +81,16 @@
         </table>-->
 
         <!--消费明目关系-->
-        <table tableName="ConsumerRelationship" domainObjectName="ConsumerRelationship"
+        <!--<table tableName="ConsumerRelationship" domainObjectName="ConsumerRelationship"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="false"/>
-            <!-- 数据库表主键 -->
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-        </table>
+        </table>-->
 
         <!--员工职位表-->
         <!--<table tableName="employeesPositionTable" domainObjectName="EmployeesPosition"
