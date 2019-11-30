@@ -148,4 +148,35 @@ public class RunningAccountController {
         return this.getImplRunningAccountService().getRunningAccountByID(stringType);
     }
 
+    @ApiOperation(value = "通过消费明目查询流水账")
+    @ResponseBody
+    @RequestMapping(value = "/getRunningAccountBySonID", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectRunningAccountBySonID(StringType stringType) {
+        return this.getImplRunningAccountService().getRunningAccountByID(stringType);
+    }
+
+    @ApiOperation(value = "通过消费明目查询流水账")
+    @ResponseBody
+    @RequestMapping(value = "/getRunningAccountByFatherID", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectRunningAccountByFatherID(StringType stringType) {
+        return this.getImplRunningAccountService().getRunningAccountByID(stringType);
+    }
+
+
+    @ApiOperation(value = "查看所有必要消费")
+    @ResponseBody
+    @RequestMapping(value = "/getNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectAllNecessaryConsumption() {
+        return this.getImplRunningAccountService().selectAllNecessaryConsumption();
+    }
+    // 是否必要消费
+    // 天/周/月/年
+
+    // 子类
+    // 天/周/月/年
+
+    // 父类
+    // 天/周/月/年
+
+
 }

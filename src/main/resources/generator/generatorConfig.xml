@@ -93,16 +93,16 @@
         </table>-->
 
         <!--员工职位表-->
-        <!--<table tableName="employeesPositionTable" domainObjectName="EmployeesPosition"
+        <table tableName="employeesPositionTable" domainObjectName="EmployeesPosition"
                enableCountByExample="flase"
                enableUpdateByExample="false"
                enableDeleteByExample="flase"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="false"/>
-            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <!-- 数据库表主键 -->
             <generatedKey column="positionID" sqlStatement="Mysql" identity="true"/>
-        </table>-->
+        </table>
     </context>
 
 </generatorConfiguration>

@@ -163,4 +163,18 @@ public class ImplRunningAccountService implements IRunningAccount {
     public List<RunningAccount> getRunningAccountByID(StringType id){
         return this.getRunningAccountMapper().getRunningAccountByID(id.getString());
     }
+
+    /**
+     * @描述  查看所有必要消费
+     * @参数  []
+     * @返回值  java.util.List<cn.liupengstudy.family_finance_system.pojo.RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/11/30 - 11:28 下午
+     * @修改人和其它信息
+     */
+    @Override
+    public List<RunningAccount> selectAllNecessaryConsumption() {
+        return this.getRunningAccountMapper().selectAllNecessaryConsumption();
+    }
 }

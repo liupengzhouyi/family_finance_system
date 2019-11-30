@@ -44,6 +44,10 @@
     and unix_timestamp(#{datetime2}) > unix_timestamp(datetime)
   </select>
 
+  <select id="selectAllNecessaryConsumption" resultMap="BaseResultMap">
+    select * from RunningAccount where necessaryConsume = 1
+  </select>
+
   <select id="getRunningAccountByID" resultMap="BaseResultMap">
     select * from RunningAccount
     where itemsNumber = #{id}
