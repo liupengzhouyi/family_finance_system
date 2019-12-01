@@ -48,6 +48,10 @@
     select * from RunningAccount where necessaryConsume = 1
   </select>
 
+  <select id="selectAllNuNecessaryConsumption" resultMap="BaseResultMap">
+    select * from RunningAccount where necessaryConsume = 0
+  </select>
+
   <select id="getRunningAccountByID" resultMap="BaseResultMap">
     select * from RunningAccount
     where itemsNumber = #{id}

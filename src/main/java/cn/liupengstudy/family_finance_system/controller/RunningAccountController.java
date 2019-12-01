@@ -169,6 +169,14 @@ public class RunningAccountController {
     public List<RunningAccount> selectAllNecessaryConsumption() {
         return this.getImplRunningAccountService().selectAllNecessaryConsumption();
     }
+
+    @ApiOperation(value = "查看所有不必要消费")
+    @ResponseBody
+    @RequestMapping(value = "/getNuNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectAllNuNecessaryConsumption() {
+        return this.getImplRunningAccountService().selectAllNuNecessaryConsumption();
+    }
+
     // 是否必要消费
     // 天/周/月/年
 
