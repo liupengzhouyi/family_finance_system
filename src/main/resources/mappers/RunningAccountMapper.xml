@@ -44,6 +44,13 @@
     and unix_timestamp(#{datetime2}) > unix_timestamp(datetime)
   </select>
 
+  <select id="selectOneDayNecessaryConsumption" resultMap="BaseResultMap">
+    select * from RunningAccount
+    where unix_timestamp(datetime) > unix_timestamp(#{datetime1})
+    and unix_timestamp(#{datetime2}) > unix_timestamp(datetime) and necessaryConsume = 1
+  </select>
+
+
   <select id="selectAllNecessaryConsumption" resultMap="BaseResultMap">
     select * from RunningAccount where necessaryConsume = 1
   </select>

@@ -170,6 +170,14 @@ public class RunningAccountController {
         return this.getImplRunningAccountService().selectAllNecessaryConsumption();
     }
 
+
+    @ApiOperation(value = "查看某天必要消费")
+    @ResponseBody
+    @RequestMapping(value = "/getOneDayNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectOneDayNecessaryConsumption(ADatetimeType aDatetimeType) {
+        return this.getImplRunningAccountService().selectOneDayNecessaryConsumption(aDatetimeType.getDatetime1(), aDatetimeType.getDatetime2());
+    }
+
     @ApiOperation(value = "查看所有不必要消费")
     @ResponseBody
     @RequestMapping(value = "/getNuNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
@@ -177,11 +185,13 @@ public class RunningAccountController {
         return this.getImplRunningAccountService().selectAllNuNecessaryConsumption();
     }
 
-    // 是否必要消费
+    // 某天必要消费
     // 天/周/月/年
+    // 时间段
 
     // 子类
     // 天/周/月/年
+    // 时间段
 
     // 父类
     // 天/周/月/年

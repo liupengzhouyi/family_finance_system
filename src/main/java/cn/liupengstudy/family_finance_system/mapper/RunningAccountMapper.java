@@ -101,4 +101,15 @@ public interface RunningAccountMapper {
      * @修改人和其它信息
      */
     List<RunningAccount> selectAllNuNecessaryConsumption();
+
+    /**
+     * @描述  查看某天的必要消费
+     * @参数  [datatime1]
+     * @返回值  java.util.List<cn.liupengstudy.family_finance_system.pojo.RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/12/4 - 12:53 上午
+     * @修改人和其它信息
+     */
+    List<RunningAccount> selectOneDayNecessaryConsumption(@Param("datetime1")String datatime1, @Param("datetime2")String datetime2);
 }
