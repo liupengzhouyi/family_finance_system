@@ -185,6 +185,13 @@ public class RunningAccountController {
         return this.getImplRunningAccountService().selectAllNuNecessaryConsumption();
     }
 
+    @ApiOperation(value = "查看所有不必要消费")
+    @ResponseBody
+    @RequestMapping(value = "/getOneDayNuNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectOneDayNuNecessaryConsumption(ADatetimeType aDatetimeType) {
+        return this.getImplRunningAccountService().selectOneDayNuNecessaryConsumption(aDatetimeType.getDatetime1(), aDatetimeType.getDatetime2());
+    }
+
     // 某天必要消费
     // 天/周/月/年
     // 时间段
