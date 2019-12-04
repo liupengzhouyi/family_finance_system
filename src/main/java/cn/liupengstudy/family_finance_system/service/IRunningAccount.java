@@ -131,6 +131,18 @@ public interface IRunningAccount {
      */
     List<RunningAccount> selectOneDayNuNecessaryConsumption(@Param("datetime1")String datatime1, @Param("datetime2")String datetime2);
 
+    /**
+     * @描述  查看某一父类的所有消费
+     * @参数  [stringType]
+     * @返回值  java.util.List<cn.liupengstudy.family_finance_system.pojo.RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/12/4 - 2:51 下午
+     * @修改人和其它信息
+     */
+    List<RunningAccount> selectConsumptionByFatherOverheadItem(String string);
+
+
 }
 
 
