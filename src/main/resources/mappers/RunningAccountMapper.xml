@@ -78,6 +78,17 @@
             where name = #{fatherOverheadItem}));
   </select>
 
+  <select id="selectConsumptionByFatherOverheadItemOneDay" resultMap="BaseResultMap">
+    select * from RunningAccount
+    where itemsNumber in (
+        select sonID from ConsumerRelationship
+        where fatherID = (
+            select id from FatherOverheadItems
+            where name = #{fatherOverheadItem}))
+    and (unix_timestamp(datetime) > unix_timestamp(#{datetime1})
+        and unix_timestamp(#{datetime2}) > unix_timestamp(datetime));
+  </select>
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--

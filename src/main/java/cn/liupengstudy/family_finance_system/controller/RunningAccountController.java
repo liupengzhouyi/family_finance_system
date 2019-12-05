@@ -207,6 +207,13 @@ public class RunningAccountController {
     public List<RunningAccount> selectConsumptionByFatherOverheadItem(StringType stringType) {
         return this.getImplRunningAccountService().selectConsumptionByFatherOverheadItem(stringType.getString());
     }
+
+    @ApiOperation(value = "查看某一父类在某一天的所有消费")
+    @ResponseBody
+    @RequestMapping(value = "/selectConsumptionByFatherOverheadItemOneDay", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectConsumptionByFatherOverheadItemOneDay(StringType stringType, ADatetimeType aDatetimeType) {
+        return this.getImplRunningAccountService().selectConsumptionByFatherOverheadItemOneDay(stringType.getString(), aDatetimeType.getDatetime1(), aDatetimeType.getDatetime2());
+    }
     // 天/周/月/年
 
 
