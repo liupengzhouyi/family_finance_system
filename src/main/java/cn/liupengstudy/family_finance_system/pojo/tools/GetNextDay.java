@@ -35,7 +35,18 @@ public class GetNextDay {
     }
 
     public GetNextDay(String stringDate) {
+        // setting this string type date
         this.stringDate = stringDate;
+        // string type date to date
+        StringToDate stringToDate = new StringToDate(this.stringDate);
+        // setting date type date
+        this.setDate(stringToDate.getDate());
+        // setting next date type date
+        this.setNextDate();
+        // date type next date to string type next date
+        DateToString dateToString = new DateToString(this.getNextDate());
+        // setting string type next date
+        this.setStringNextDate(dateToString.getStringTypeDate());
     }
 
     // 2019-12-12
@@ -67,8 +78,7 @@ public class GetNextDay {
         return nextDate;
     }
 
-    public void setNextDate(Date nextDate) {
-        this.nextDate = nextDate;
+    public void setNextDate() {
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(this.getDate());
         calendar.add(calendar.DATE,1); //把日期往后增加一天,整数往后推,负数往前移动
