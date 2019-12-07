@@ -12,22 +12,22 @@ import java.util.Date;
  * @描述
  * @创建人 liupeng
  * @作者联系方式 LIUPENG.0@outlook.com
- * @创建时间 2019/12/6 - 11:17 下午
+ * @创建时间 2019/12/7 - 4:53 下午
  * @修改人和其它信息
  */
-@ApiModel(value = "Date类型转String类型的Date数据")
-public class DateToStringTypeDate {
+@ApiModel(value = "Date类型日期转换成String类型日期")
+public class DateToString {
 
-    @ApiModelProperty(value = "String类型的Date数据")
+    @ApiModelProperty(value = "String类型的日期")
     private String stringTypeDate;
 
-    @ApiModelProperty(value = "Date类型的Date数据")
+    @ApiModelProperty(value = "Date类型日期")
     private Date date;
 
-    public DateToStringTypeDate() {
+    public DateToString() {
     }
 
-    public DateToStringTypeDate(Date date) {
+    public DateToString(Date date) {
         this.date = date;
         this.setStringTypeDate();
     }
@@ -42,7 +42,6 @@ public class DateToStringTypeDate {
         DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             this.stringTypeDate = sdf.format(date);
-            System.out.println(this.stringTypeDate);
         } catch (Exception e) {
             e.printStackTrace();
         }

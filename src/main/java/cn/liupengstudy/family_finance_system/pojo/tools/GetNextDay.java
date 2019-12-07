@@ -4,7 +4,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiParam;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * @文件名 cn.liupengstudy.family_finance_system.pojo.tools
@@ -67,5 +69,9 @@ public class GetNextDay {
 
     public void setNextDate(Date nextDate) {
         this.nextDate = nextDate;
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(this.getDate());
+        calendar.add(calendar.DATE,1); //把日期往后增加一天,整数往后推,负数往前移动
+        this.nextDate=calendar.getTime(); //这个时间就是日期往后推一天的结果
     }
 }
