@@ -32,7 +32,7 @@ public class GetNextDayTest {
 
     @After
     public void tearDown() throws Exception {
-        System.out.println("--End---");
+        System.out.println("---End---");
     }
 
     @Test
