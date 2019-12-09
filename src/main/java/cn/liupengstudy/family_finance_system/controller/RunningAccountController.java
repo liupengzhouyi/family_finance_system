@@ -204,6 +204,28 @@ public class RunningAccountController {
         return this.getImplRunningAccountService().selectOneMonthConsumption(thisMonthDate, nextMonthDate);
     }
 
+    @ApiOperation(value = "查看某月所有必要消费")
+    @ResponseBody
+    @RequestMapping(value = "/getOneMonthNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectOneMonthNecessaryConsumption(ADatetimeType aDatetimeType) {
+        GetNextMonth getNextMonth = new GetNextMonth(aDatetimeType.getDatetime1());
+        String thisMonthDate = getNextMonth.getStringDate();
+        String nextMonthDate = getNextMonth.getStringNextMonthDate();
+        // System.out.println(thisMonthDate + nextMonthDate);
+        return this.getImplRunningAccountService().selectOneMonthNecessaryConsumption(thisMonthDate, nextMonthDate);
+    }
+
+    @ApiOperation(value = "查看某月所有不必要消费")
+    @ResponseBody
+    @RequestMapping(value = "/getOneMonthNuNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectOneMonthNuNecessaryConsumption(ADatetimeType aDatetimeType) {
+        GetNextMonth getNextMonth = new GetNextMonth(aDatetimeType.getDatetime1());
+        String thisMonthDate = getNextMonth.getStringDate();
+        String nextMonthDate = getNextMonth.getStringNextMonthDate();
+        // System.out.println(thisMonthDate + nextMonthDate);
+        return this.getImplRunningAccountService().selectOneMonthNuNecessaryConsumption(thisMonthDate, nextMonthDate);
+    }
+
     // 某天必要消费
     // 天/周/月/年
     // 时间段

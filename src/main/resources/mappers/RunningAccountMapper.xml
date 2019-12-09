@@ -95,6 +95,19 @@
     and unix_timestamp(#{nextMonthDate}) > unix_timestamp(datetime)
   </select>
 
+  <select id="selectOneMonthNecessaryConsumption" resultMap="BaseResultMap">
+    select * from RunningAccount
+    where unix_timestamp(datetime) > unix_timestamp(#{thisMonthDate})
+    and unix_timestamp(#{nextMonthDate}) > unix_timestamp(datetime) and necessaryConsume = 1
+  </select>
+
+  <select id="selectOneMonthNuNecessaryConsumption" resultMap="BaseResultMap">
+    select * from RunningAccount
+    where unix_timestamp(datetime) > unix_timestamp(#{thisMonthDate})
+    and unix_timestamp(#{nextMonthDate}) > unix_timestamp(datetime) and necessaryConsume = 0
+  </select>
+
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
