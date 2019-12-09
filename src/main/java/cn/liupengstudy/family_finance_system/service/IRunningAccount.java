@@ -154,6 +154,19 @@ public interface IRunningAccount {
      */
     List<RunningAccount> selectConsumptionByFatherOverheadItemOneDay(@Param("fatherOverheadItem")String string, @Param("datetime1")String datatime1, @Param("datetime2")String datetime2);
 
+
+    /**
+     * @描述  查看某月所有消费
+     * @参数  [thisMonthDate, nextMonthDate]
+     * @返回值  java.util.List<cn.liupengstudy.family_finance_system.pojo.RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/12/9 - 11:12 下午
+     * @修改人和其它信息
+     */
+    List<RunningAccount> selectOneMonthConsumption(@Param("thisMonthDate") String thisMonthDate, @Param("nextMonthDate")String nextMonthDate);
+
+
 }
 
 

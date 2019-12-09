@@ -1,6 +1,7 @@
 package cn.liupengstudy.family_finance_system.controller;
 
 import cn.liupengstudy.family_finance_system.pojo.*;
+import cn.liupengstudy.family_finance_system.pojo.tools.date.GetNextMonth;
 import cn.liupengstudy.family_finance_system.service.Impl.ImplRunningAccountService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -190,6 +191,17 @@ public class RunningAccountController {
     @RequestMapping(value = "/getOneDayNuNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public List<RunningAccount> selectOneDayNuNecessaryConsumption(ADatetimeType aDatetimeType) {
         return this.getImplRunningAccountService().selectOneDayNuNecessaryConsumption(aDatetimeType.getDatetime1(), aDatetimeType.getDatetime2());
+    }
+
+    @ApiOperation(value = "查看某月所有消费")
+    @ResponseBody
+    @RequestMapping(value = "/getOneMonthConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectOneMonthConsumption(ADatetimeType aDatetimeType) {
+        GetNextMonth getNextMonth = new GetNextMonth(aDatetimeType.getDatetime1());
+        String thisMonthDate = getNextMonth.getStringDate();
+        String nextMonthDate = getNextMonth.getStringNextMonthDate();
+        // System.out.println(thisMonthDate + nextMonthDate);
+        return this.getImplRunningAccountService().selectOneMonthConsumption(thisMonthDate, nextMonthDate);
     }
 
     // 某天必要消费

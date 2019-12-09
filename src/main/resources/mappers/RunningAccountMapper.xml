@@ -89,6 +89,12 @@
         and unix_timestamp(#{datetime2}) > unix_timestamp(datetime));
   </select>
 
+  <select id="selectOneMonthConsumption" resultMap="BaseResultMap">
+    select * from RunningAccount
+    where unix_timestamp(datetime) > unix_timestamp(#{thisMonthDate})
+    and unix_timestamp(#{nextMonthDate}) > unix_timestamp(datetime)
+  </select>
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
