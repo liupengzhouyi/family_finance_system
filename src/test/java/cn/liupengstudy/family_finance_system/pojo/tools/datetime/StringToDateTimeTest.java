@@ -1,5 +1,6 @@
-package cn.liupengstudy.family_finance_system.pojo.tools.date;
+package cn.liupengstudy.family_finance_system.pojo.tools.datetime;
 
+import cn.liupengstudy.family_finance_system.pojo.tools.date.StringToDate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +13,7 @@ import org.junit.Test;
  * @创建时间 2019/12/6 - 11:10 下午
  * @修改人和其它信息
  */
-public class StringToDateTest {
+public class StringToDateTimeTest {
 
     private StringToDate stringToDate;
 
