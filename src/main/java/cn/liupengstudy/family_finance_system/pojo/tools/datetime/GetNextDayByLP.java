@@ -16,7 +16,7 @@ import java.util.GregorianCalendar;
  * @修改人和其它信息
  */
 @ApiModel(value = "获取一个日期的下一个日期")
-public class GetNextDay {
+public class GetNextDayByLP {
 
     @ApiModelProperty(value = "String type date")
     private String stringDate;
@@ -30,10 +30,10 @@ public class GetNextDay {
     @ApiModelProperty(value = "Date type nextDate")
     private Date nextDate;
 
-    public GetNextDay() {
+    public GetNextDayByLP() {
     }
 
-    public GetNextDay(String stringDate) {
+    public GetNextDayByLP(String stringDate) {
         // setting this string type date
         this.stringDate = stringDate;
         // string type date to date

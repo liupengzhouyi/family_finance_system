@@ -1,16 +1,14 @@
 package cn.liupengstudy.family_finance_system.controller;
 
 import cn.liupengstudy.family_finance_system.pojo.*;
-import cn.liupengstudy.family_finance_system.pojo.tools.date.GetNextMonth;
-import cn.liupengstudy.family_finance_system.pojo.tools.date.GetNextYear;
+import cn.liupengstudy.family_finance_system.pojo.tools.date.GetNextMonthByLP;
+import cn.liupengstudy.family_finance_system.pojo.tools.date.GetNextYearByLP;
 import cn.liupengstudy.family_finance_system.service.Impl.ImplRunningAccountService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -198,9 +196,9 @@ public class RunningAccountController {
     @ResponseBody
     @RequestMapping(value = "/getOneMonthConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public List<RunningAccount> selectOneMonthConsumption(ADatetimeType aDatetimeType) {
-        GetNextMonth getNextMonth = new GetNextMonth(aDatetimeType.getDatetime1());
-        String thisMonthDate = getNextMonth.getStringDate();
-        String nextMonthDate = getNextMonth.getStringNextMonthDate();
+        GetNextMonthByLP getNextMonthByLP = new GetNextMonthByLP(aDatetimeType.getDatetime1());
+        String thisMonthDate = getNextMonthByLP.getStringDate();
+        String nextMonthDate = getNextMonthByLP.getStringNextMonthDate();
         // System.out.println(thisMonthDate + nextMonthDate);
         return this.getImplRunningAccountService().selectOneMonthConsumption(thisMonthDate, nextMonthDate);
     }
@@ -209,9 +207,9 @@ public class RunningAccountController {
     @ResponseBody
     @RequestMapping(value = "/getOneMonthNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public List<RunningAccount> selectOneMonthNecessaryConsumption(ADatetimeType aDatetimeType) {
-        GetNextMonth getNextMonth = new GetNextMonth(aDatetimeType.getDatetime1());
-        String thisMonthDate = getNextMonth.getStringDate();
-        String nextMonthDate = getNextMonth.getStringNextMonthDate();
+        GetNextMonthByLP getNextMonthByLP = new GetNextMonthByLP(aDatetimeType.getDatetime1());
+        String thisMonthDate = getNextMonthByLP.getStringDate();
+        String nextMonthDate = getNextMonthByLP.getStringNextMonthDate();
         // System.out.println(thisMonthDate + nextMonthDate);
         return this.getImplRunningAccountService().selectOneMonthNecessaryConsumption(thisMonthDate, nextMonthDate);
     }
@@ -220,9 +218,9 @@ public class RunningAccountController {
     @ResponseBody
     @RequestMapping(value = "/getOneMonthNuNecessaryConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public List<RunningAccount> selectOneMonthNuNecessaryConsumption(ADatetimeType aDatetimeType) {
-        GetNextMonth getNextMonth = new GetNextMonth(aDatetimeType.getDatetime1());
-        String thisMonthDate = getNextMonth.getStringDate();
-        String nextMonthDate = getNextMonth.getStringNextMonthDate();
+        GetNextMonthByLP getNextMonthByLP = new GetNextMonthByLP(aDatetimeType.getDatetime1());
+        String thisMonthDate = getNextMonthByLP.getStringDate();
+        String nextMonthDate = getNextMonthByLP.getStringNextMonthDate();
         // System.out.println(thisMonthDate + nextMonthDate);
         return this.getImplRunningAccountService().selectOneMonthNuNecessaryConsumption(thisMonthDate, nextMonthDate);
     }
@@ -231,18 +229,14 @@ public class RunningAccountController {
     @ResponseBody
     @RequestMapping(value = "/getOneYearConsumption", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public List<RunningAccount> selectOneYearConsumption(ADatetimeType aDatetimeType) {
-        GetNextYear getNextYear = new GetNextYear(aDatetimeType.getDatetime1());
-        String thisYearDate = getNextYear.getStringDate();
-        String nextYearDate = getNextYear.getStringNextYearDate();
+        GetNextYearByLP getNextYearByLP = new GetNextYearByLP(aDatetimeType.getDatetime1());
+        String thisYearDate = getNextYearByLP.getStringDate();
+        String nextYearDate = getNextYearByLP.getStringNextYearDate();
+        // System.out.println(thisMonthDate + nextMonthDate);
         return this.getImplRunningAccountService().selectOneYearConsumption(thisYearDate, nextYearDate);
     }
     
     // 某天必要消费
-
-
-
-
-
     // 天/周/月/年
     // 时间段
 

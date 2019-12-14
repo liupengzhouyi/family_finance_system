@@ -12,7 +12,7 @@ import org.junit.Test;
  * @创建时间 2019/12/7 - 5:05 下午
  * @修改人和其它信息
  */
-public class GetNextDayTest {
+public class GetNextDayByLPTest {
 
     private GetNextDay getNextDay;
 

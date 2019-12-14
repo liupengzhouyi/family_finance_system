@@ -12,14 +12,16 @@ import java.util.GregorianCalendar;
  * @描述
  * @创建人 liupeng
  * @作者联系方式 LIUPENG.0@outlook.com
- * @创建时间 2019/12/7 - 5:18 下午
+ * @创建时间 2019/12/7 - 5:10 下午
  * @修改人和其它信息
  */
-@ApiModel(value = "获取一个日期的下一个月日期")
-public class GetNextMonth {
+@ApiModel(value = "获取一个日期的下一个week")
+public class GetNextWeekByLP {
 
-    public GetNextMonth(String stringDate) {
-        this.stringDate = stringDate;
+    public GetNextWeekByLP() {
+    }
+
+    public GetNextWeekByLP(String stringDate) {
         // setting this string type date
         this.stringDate = stringDate;
         // string type date to date
@@ -27,27 +29,24 @@ public class GetNextMonth {
         // setting date type date
         this.setDate(stringToDate.getDate());
         // setting next date type date
-        this.setNextMonthDate();
+        this.setNextWeekDate();
         // date type next date to string type next date
-        DateToString dateToString = new DateToString(this.getNextMonthDate());
+        DateToString dateToString = new DateToString(this.getNextWeekDate());
         // setting string type next date
-        this.setStringNextMonthDate(dateToString.getStringTypeDate());
-    }
-
-    public GetNextMonth() {
+        this.setStringNextWeekDate(dateToString.getStringTypeDate());
     }
 
     @ApiModelProperty(value = "String type date")
     private String stringDate;
 
-    @ApiModelProperty(value = "String type next month date")
-    private String stringNextMonthDate;
+    @ApiModelProperty(value = "String type next week date")
+    private String stringNextWeekDate;
 
     @ApiModelProperty(value = "Date type date")
     private Date date;
 
-    @ApiModelProperty(value = "Date type next month Date")
-    private Date nextMonthDate;
+    @ApiModelProperty(value = "Date type next week Date")
+    private Date nextWeekDate;
 
     public String getStringDate() {
         return stringDate;
@@ -57,12 +56,12 @@ public class GetNextMonth {
         this.stringDate = stringDate;
     }
 
-    public String getStringNextMonthDate() {
-        return stringNextMonthDate;
+    public String getStringNextWeekDate() {
+        return stringNextWeekDate;
     }
 
-    public void setStringNextMonthDate(String stringNextMonthDate) {
-        this.stringNextMonthDate = stringNextMonthDate;
+    public void setStringNextWeekDate(String stringNextWeekDate) {
+        this.stringNextWeekDate = stringNextWeekDate;
     }
 
     public Date getDate() {
@@ -73,14 +72,14 @@ public class GetNextMonth {
         this.date = date;
     }
 
-    public Date getNextMonthDate() {
-        return nextMonthDate;
+    public Date getNextWeekDate() {
+        return nextWeekDate;
     }
 
-    public void setNextMonthDate() {
+    public void setNextWeekDate() {
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(this.getDate());
-        calendar.add(calendar.MONTH,1); //把日期往后增加一月,整数往后推,负数往前移动
-        this.nextMonthDate=calendar.getTime(); //这个时间就是日期往后推一月的结果
+        calendar.add(calendar.DATE,7); //把日期往后增加7天,整数往后推,负数往前移动
+        this.nextWeekDate=calendar.getTime(); //这个时间就是日期往后推一天的结果
     }
 }

@@ -4,8 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @文件名 cn.liupengstudy.family_finance_system.pojo.tools.date
  * @描述
@@ -14,22 +12,22 @@ import static org.junit.Assert.*;
  * @创建时间 2019/12/8 - 11:14 下午
  * @修改人和其它信息
  */
-public class GetNextYearTest {
+public class GetNextYearByLPTest {
 
-    private GetNextYear getNextYear;
+    private GetNextYearByLP getNextYearByLP;
 
-    public GetNextYear getGetNextYear() {
-        return getNextYear;
+    public GetNextYearByLP getGetNextYearByLP() {
+        return getNextYearByLP;
     }
 
-    public void setGetNextYear(GetNextYear getNextYear) {
-        this.getNextYear = getNextYear;
+    public void setGetNextYearByLP(GetNextYearByLP getNextYearByLP) {
+        this.getNextYearByLP = getNextYearByLP;
     }
 
     @Before
     public void setUp() throws Exception {
         lpPrintln("---Start---");
-        this.setGetNextYear(new GetNextYear("2019-12-31"));
+        this.setGetNextYearByLP(new GetNextYearByLP("2019-12-31"));
     }
 
     @After
@@ -39,12 +37,12 @@ public class GetNextYearTest {
 
     @Test
     public void getStringDate() {
-        lpPrintln(this.getGetNextYear().getStringDate());
+        lpPrintln(this.getGetNextYearByLP().getStringDate());
     }
 
     @Test
     public void getStringNextYearDate() {
-        lpPrintln(this.getGetNextYear().getStringNextYearDate());
+        lpPrintln(this.getGetNextYearByLP().getStringNextYearDate());
     }
 
     public void lpPrintln(String string){

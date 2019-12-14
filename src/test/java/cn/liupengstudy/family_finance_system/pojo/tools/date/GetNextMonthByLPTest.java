@@ -4,8 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @文件名 cn.liupengstudy.family_finance_system.pojo.tools.date
  * @描述
@@ -14,22 +12,22 @@ import static org.junit.Assert.*;
  * @创建时间 2019/12/8 - 11:06 下午
  * @修改人和其它信息
  */
-public class GetNextMonthTest {
+public class GetNextMonthByLPTest {
 
-    private GetNextMonth getNextMonth;
+    private GetNextMonthByLP getNextMonthByLP;
 
-    public GetNextMonth getGetNextMonth() {
-        return getNextMonth;
+    public GetNextMonthByLP getGetNextMonth() {
+        return getNextMonthByLP;
     }
 
-    public void setGetNextMonth(GetNextMonth getNextMonth) {
-        this.getNextMonth = getNextMonth;
+    public void setGetNextMonth(GetNextMonthByLP getNextMonthByLP) {
+        this.getNextMonthByLP = getNextMonthByLP;
     }
 
     @Before
     public void setUp() throws Exception {
         System.out.println("---Start---");
-        this.setGetNextMonth(new GetNextMonth("2019-12-31"));
+        this.setGetNextMonth(new GetNextMonthByLP("2019-12-31"));
     }
 
     @After

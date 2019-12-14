@@ -4,8 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @文件名 cn.liupengstudy.family_finance_system.pojo.tools.date
  * @描述
@@ -14,22 +12,22 @@ import static org.junit.Assert.*;
  * @创建时间 2019/12/7 - 5:15 下午
  * @修改人和其它信息
  */
-public class GetNextWeekTest {
+public class GetNextWeekByLPTest {
 
-    private GetNextWeek getNextWeek;
+    private GetNextWeekByLP getNextWeekByLP;
 
-    public GetNextWeek getGetNextWeek() {
-        return getNextWeek;
+    public GetNextWeekByLP getGetNextWeek() {
+        return getNextWeekByLP;
     }
 
-    public void setGetNextWeek(GetNextWeek getNextWeek) {
-        this.getNextWeek = getNextWeek;
+    public void setGetNextWeek(GetNextWeekByLP getNextWeekByLP) {
+        this.getNextWeekByLP = getNextWeekByLP;
     }
 
     @Before
     public void setUp() throws Exception {
         lpPrintln("----Start----");
-        this.setGetNextWeek(new GetNextWeek("2019-12-07"));
+        this.setGetNextWeek(new GetNextWeekByLP("2019-12-07"));
     }
 
     @After

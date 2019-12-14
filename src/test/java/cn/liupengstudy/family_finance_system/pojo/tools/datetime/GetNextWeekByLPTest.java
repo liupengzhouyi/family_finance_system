@@ -1,6 +1,6 @@
 package cn.liupengstudy.family_finance_system.pojo.tools.datetime;
 
-import cn.liupengstudy.family_finance_system.pojo.tools.date.GetNextWeek;
+import cn.liupengstudy.family_finance_system.pojo.tools.date.GetNextWeekByLP;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,22 +13,22 @@ import org.junit.Test;
  * @创建时间 2019/12/7 - 5:15 下午
  * @修改人和其它信息
  */
-public class GetNextWeekTest {
+public class GetNextWeekByLPTest {
 
-    private GetNextWeek getNextWeek;
+    private GetNextWeekByLP getNextWeekByLP;
 
-    public GetNextWeek getGetNextWeek() {
-        return getNextWeek;
+    public GetNextWeekByLP getGetNextWeekByLP() {
+        return getNextWeekByLP;
     }
 
-    public void setGetNextWeek(GetNextWeek getNextWeek) {
-        this.getNextWeek = getNextWeek;
+    public void setGetNextWeekByLP(GetNextWeekByLP getNextWeekByLP) {
+        this.getNextWeekByLP = getNextWeekByLP;
     }
 
     @Before
     public void setUp() throws Exception {
         lpPrintln("----Start----");
-        this.setGetNextWeek(new GetNextWeek("2019-12-31 12:23:02"));
+        this.setGetNextWeekByLP(new GetNextWeekByLP("2019-12-31 12:23:02"));
     }
 
     @After
@@ -38,12 +38,12 @@ public class GetNextWeekTest {
 
     @Test
     public void getStringDate() {
-        lpPrintln(this.getGetNextWeek().getStringDate());
+        lpPrintln(this.getGetNextWeekByLP().getStringDate());
     }
 
     @Test
     public void getStringNextWeekDate() {
-        lpPrintln(this.getGetNextWeek().getStringNextWeekDate());
+        lpPrintln(this.getGetNextWeekByLP().getStringNextWeekDate());
     }
 
     public void lpPrintln(String string){

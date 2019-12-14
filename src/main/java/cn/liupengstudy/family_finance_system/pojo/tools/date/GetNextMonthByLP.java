@@ -12,16 +12,14 @@ import java.util.GregorianCalendar;
  * @描述
  * @创建人 liupeng
  * @作者联系方式 LIUPENG.0@outlook.com
- * @创建时间 2019/12/8 - 11:11 下午
+ * @创建时间 2019/12/7 - 5:18 下午
  * @修改人和其它信息
  */
-@ApiModel(value = "获取一个日期的下一年的日期")
-public class GetNextYear {
+@ApiModel(value = "获取一个日期的下一个月日期")
+public class GetNextMonthByLP {
 
-    public GetNextYear() {
-    }
-
-    public GetNextYear(String stringDate) {
+    public GetNextMonthByLP(String stringDate) {
+        this.stringDate = stringDate;
         // setting this string type date
         this.stringDate = stringDate;
         // string type date to date
@@ -29,24 +27,27 @@ public class GetNextYear {
         // setting date type date
         this.setDate(stringToDate.getDate());
         // setting next date type date
-        this.setNextYearDate();
+        this.setNextMonthDate();
         // date type next date to string type next date
-        DateToString dateToString = new DateToString(this.getNextYearDate());
+        DateToString dateToString = new DateToString(this.getNextMonthDate());
         // setting string type next date
-        this.setStringNextYearDate(dateToString.getStringTypeDate());
+        this.setStringNextMonthDate(dateToString.getStringTypeDate());
     }
-    
+
+    public GetNextMonthByLP() {
+    }
+
     @ApiModelProperty(value = "String type date")
     private String stringDate;
 
     @ApiModelProperty(value = "String type next month date")
-    private String stringNextYearDate;
+    private String stringNextMonthDate;
 
     @ApiModelProperty(value = "Date type date")
     private Date date;
 
     @ApiModelProperty(value = "Date type next month Date")
-    private Date nextYearDate;
+    private Date nextMonthDate;
 
     public String getStringDate() {
         return stringDate;
@@ -56,12 +57,12 @@ public class GetNextYear {
         this.stringDate = stringDate;
     }
 
-    public String getStringNextYearDate() {
-        return stringNextYearDate;
+    public String getStringNextMonthDate() {
+        return stringNextMonthDate;
     }
 
-    public void setStringNextYearDate(String stringNextYearDate) {
-        this.stringNextYearDate = stringNextYearDate;
+    public void setStringNextMonthDate(String stringNextMonthDate) {
+        this.stringNextMonthDate = stringNextMonthDate;
     }
 
     public Date getDate() {
@@ -72,14 +73,14 @@ public class GetNextYear {
         this.date = date;
     }
 
-    public Date getNextYearDate() {
-        return nextYearDate;
+    public Date getNextMonthDate() {
+        return nextMonthDate;
     }
 
-    public void setNextYearDate() {
+    public void setNextMonthDate() {
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(this.getDate());
-        calendar.add(calendar.YEAR,1); //把日期往后增加一年,整数往后推,负数往前移动
-        this.nextYearDate=calendar.getTime(); //这个时间就是日期往后推一年的结果
+        calendar.add(calendar.MONTH,1); //把日期往后增加一月,整数往后推,负数往前移动
+        this.nextMonthDate=calendar.getTime(); //这个时间就是日期往后推一月的结果
     }
 }
