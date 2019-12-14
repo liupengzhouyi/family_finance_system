@@ -234,11 +234,15 @@ public class RunningAccountController {
         GetNextYear getNextYear = new GetNextYear(aDatetimeType.getDatetime1());
         String thisYearDate = getNextYear.getStringDate();
         String nextYearDate = getNextYear.getStringNextYearDate();
-        // System.out.println(thisMonthDate + nextMonthDate);
         return this.getImplRunningAccountService().selectOneYearConsumption(thisYearDate, nextYearDate);
     }
     
     // 某天必要消费
+
+
+
+
+
     // 天/周/月/年
     // 时间段
 
