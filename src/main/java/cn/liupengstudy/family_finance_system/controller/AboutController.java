@@ -22,9 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "关于控制器", description = "获取关于信息")
 public class AboutController {
 
-    @ApiOperation(value = "获取信息")
+    @ApiOperation(value = "获取about信息")
     @ResponseBody
-    @RequestMapping(value = "/getAboutInformatioon", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/getAboutInformatioon", produces = "application/json;charset=UTF-8")
     public AboutInformation getInformation() {
         AboutInformation aboutInformation = new AboutInformation("liupeng","记账软件","liupeng","liupeng.0@outlook.com","2019-12-14");
         return aboutInformation;
