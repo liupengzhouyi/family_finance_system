@@ -241,6 +241,12 @@ public class RunningAccountController {
     // 时间段
 
     // 子类
+    @ApiOperation(value = "根据子类名称查看所有消费")
+    @ResponseBody
+    @RequestMapping(value = "/selectConsumptionBySonOverheadItem", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public List<RunningAccount> selectConsumptionBySonOverheadItem(StringType stringType) {
+        return this.getImplRunningAccountService().selectConsumptionBySonOverheadItem(stringType.getString());
+    }
     // 天/周/月/年
     // 时间段
 

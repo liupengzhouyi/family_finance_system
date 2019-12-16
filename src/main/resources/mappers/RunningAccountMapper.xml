@@ -113,6 +113,9 @@
     and unix_timestamp(#{nextYearDate}) > unix_timestamp(datetime)
   </select>
 
+  <select id="selectConsumptionBySonOverheadItem" resultMap="BaseResultMap">
+    select * from RunningAccount where itemsNumber = (select id from SonOverheadItems where name = #{sonOverheadItem})
+  </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--

@@ -304,4 +304,18 @@ public class ImplRunningAccountService implements IRunningAccount {
     public List<RunningAccount> selectOneYearConsumption(String thisYearDate, String nextYearDate) {
         return this.runningAccountMapper.selectOneYearConsumption(thisYearDate,nextYearDate);
     }
+
+    /**
+     * @描述  根据子类名称查看所有消费
+     * @参数  [stringType]
+     * @返回值  java.util.List<cn.liupengstudy.family_finance_system.pojo.RunningAccount>
+     * @创建人  liupeng
+     * @作者联系方式 LIUPENG.0@outlook.com
+     * @创建时间  2019/12/16 - 8:24 上午
+     * @修改人和其它信息
+     */
+    @Override
+    public List<RunningAccount> selectConsumptionBySonOverheadItem(String string) {
+        return this.runningAccountMapper.selectConsumptionBySonOverheadItem(string);
+    }
 }
